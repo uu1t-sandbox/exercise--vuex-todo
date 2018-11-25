@@ -15,19 +15,19 @@
       </li>
     </ul>
     <form @submit.prevent="addTask">
-      <input type="text" v-model="newTaskName" placeholder="新しいタスク">
+      <input v-model="newTaskName" type="text" placeholder="新しいタスク">
     </form>
     <h2>ラベル一覧</h2>
     <ul>
       <li v-for="label of labels" :key="label.id">
         <label>
-          <input type="checkbox" :value="label.id" v-model="newTaskLabelIds">
+          <input v-model="newTaskLabelIds" type="checkbox" :value="label.id">
           {{ label.text }}
         </label>
       </li>
     </ul>
     <form @submit.prevent="addLabel">
-      <input type="text" v-model="newLabelText" placeholder="新しいラベル">
+      <input v-model="newLabelText" type="text" placeholder="新しいラベル">
     </form>
     <h2>ラベルでフィルタ</h2>
     <ul>
@@ -53,7 +53,7 @@
 import { mapGetters, mapMutations, mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'app',
+  name: 'App',
   data: () => ({
     newTaskName: '',
     newTaskLabelIds: [],
